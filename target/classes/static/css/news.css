@@ -1,0 +1,12 @@
+.div_s_hover { color: #FFFFFF; }
+
+.div_s_hover:hover { color: #000000; }
+
+.side {
+    display:inline-block;
+}
+.headlines {
+    background: #4d4d4d;
+    color: white;
+
+}

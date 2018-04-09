@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>NEWS</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src = "https://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js">
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="css/news.css">
+    <script src="js/news.js"></script>
+</head>
+<body>
+
+<div  ng-app="news" ng-controller="newsController" class="row" style="background: #4CAF50">
+
+    <div class="col-md-3" >
+        {{sources.size}}
+        <div ng-repeat="source in sources.sources" >
+
+
+        <div class=" container text-white btn btn-secondary" ng-click="getHeadlines(source.id)" style="margin-top: 5px">
+            <div  >{{source.name}}</div>
+        </div>
+        </div>
+    </div>
+    <div class="col-md-9" style=" overflow-y: auto; display: block" >
+        <div>
+            <div class="container">
+                <h3 style="color: #FFFFFF">Top Headlines</h3>
+                </div>
+            <div ng-repeat="headline in headlines.articles">
+                <div class="headlines btn btn-secondary" ng-click="fetchnews(headline.url)" >
+                    <a href="{{headline.url}}" traget="details">{{headline.title}}</a>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+</body>
+</html>
